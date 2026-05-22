@@ -6,30 +6,30 @@ services:
       MARIADB_ROOT_PASSWORD: password!123
       MARIADB_DATABASE: dbcompro_2388010016
       MARIADB_USER: userwebdinamis_2388010016
-      MARIADB_PASSWORD: O)xz6GWEwDOx1Ea9
+      MARIADB_PASSWORD: F4q1hF1r4nsy4h
     volumes:
       - db_data:/var/lib/mysql
       - ./db_data/dbcompro_2388010016.sql:/docker-entrypoint-initdb.d/dbcompro_2388010016.sql:ro
     restart: always
 
   container-statis:
-    image: mohamadfirdaus12/himafor_2388010016:latest
+    image: qih14/himafor_2388010016:latest
     ports:
       - "80:80"
     restart: always
 
   container-dinamis:
-    image: mohamadfirdaus12/web-dinamis:latest
+    image: qih14/web-dinamis:latest
     ports:
       - "3000:3000"
     restart: always
     environment:
       DB_USER: userwebdinamis_2388010016
-      DB_PASSWORD: O]9hFZD2NqujWg82
+      DB_PASSWORD: F4q1hF1r4nsy4h
       DB_NAME: dbcompro_2388010016
       DB_HOST: db-webdinamis
       NEXTAUTH_SECRET: ini-kata-kata-bebas-saja-32-karekter
-      NEXTAUTH_URL: http://3.25.181.208:3000
+      NEXTAUTH_URL: http://54.179.191.49:3000
     depends_on:
       - db-webdinamis
 
