@@ -1,5 +1,5 @@
 name: Deploy Web Static to AWS EC2
-#bbbbb
+#LOL
 on:
   push:
     branches: [ master ]
